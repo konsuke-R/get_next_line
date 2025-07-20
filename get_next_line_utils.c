@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kkono <kkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 21:52:04 by user              #+#    #+#             */
-/*   Updated: 2025/07/18 20:31:57 by user             ###   ########.fr       */
+/*   Updated: 2025/07/20 21:18:15 by kkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		cnt1;
 	int		cnt2;
 
-	str_len = all_strlen(s1, s2);
+	str_len = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc(sizeof(char) * (str_len + 1));
 	if (!str)
 		return (NULL);
@@ -55,16 +55,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[cnt1 + cnt2] = '\0';
 	return (str);
-}
-
-int	all_strlen(char const *s1, char const *s2)
-{
-	int	s1_len;
-	int	s2_len;
-
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	return (s1_len + s2_len);
 }
 
 size_t	ft_strlcpy(char *dest, const char *restrict src, size_t dsize)
